@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class Record {
 	public static void main(String[] args) {
 		
-	 String fileName = "\\C:\\Users\\karakoon_net\\Downloads\\internet_2020.csv.csv";
+	 String fileName = "internet_2020.csv.csv";
 	    try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
             String line;
             String[] countries = new String[16];
@@ -23,21 +23,21 @@ public class Record {
                 String country = parts[0];
                 String usersPercentage = parts[1];
 
-                //  √ﬂœ „‰ √‰ «·„’›Ê›… ·Ì”  „„ ·∆…
+                // √ä√É√ü√è √£√§ √É√§ √á√°√£√ï√ù√¶√ù√â √°√≠√ì√ä √£√£√ä√°√Ü√â
                 if (currentIndex >= countries.length) {
-                    // ≈–« ﬂ«‰  „„ ·∆…° “œ ÕÃ„Â« »„ﬁœ«— ÷⁄› «·ÕÃ„ «·Õ«·Ì
+                    // √Ö√ê√á √ü√á√§√ä √£√£√ä√°√Ü√â¬° √í√è √ç√å√£√•√á √à√£√û√è√á√ë √ñ√ö√ù √á√°√ç√å√£ √á√°√ç√á√°√≠
                     int newSize = countries.length * 2;
                     countries = Arrays.copyOf(countries, newSize);
                     usersPercentages = Arrays.copyOf(usersPercentages, newSize);
                 }
 
-                // Õ›Ÿ «·»Ì«‰«  ›Ì «·„’›Ê›…
+                // √ç√ù√ô √á√°√à√≠√á√§√á√ä √ù√≠ √á√°√£√ï√ù√¶√ù√â
                 countries[currentIndex] = country;
                 usersPercentages[currentIndex] = usersPercentage;
                 currentIndex++;
             }
 
-            // ÿ»«⁄… «·»Ì«‰«  »⁄œ «·ﬁ—«¡…
+            // √ò√à√á√ö√â √á√°√à√≠√á√§√á√ä √à√ö√è √á√°√û√ë√á√Å√â
             for (int i = 0; i < currentIndex; i++) {
                 System.out.println("Countries: " + countries[i] + ", users internet: " + usersPercentages[i]);
             }
